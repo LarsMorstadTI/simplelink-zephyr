@@ -1,0 +1,70 @@
+/*
+ * Copyright (c) 2025 Texas Instruments Incorporated
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include <zephyr/dt-bindings/pinctrl/cc23x0-pinctrl.h>
+
+&pinctrl {
+	/* UART0 */
+	uart0_tx_default: uart0_tx_default {
+		pinmux = <6 DIO6_UART0_TXD>;
+		bias-disable;
+	};
+
+	uart0_rx_default: uart0_rx_default {
+		pinmux = <20 DIO20_UART0_RXD>;
+		bias-disable;
+		input-enable;
+	};
+
+	/* SPI0 */
+	spi0_sck_default: spi0_sck_default {
+		pinmux = <18 DIO18_SPI0_SCLK>;
+		bias-disable;
+	};
+
+	spi0_mosi_default: spi0_mosi_default {
+		pinmux = <12 DIO12_SPI0_MOSI>;
+		bias-disable;
+	};
+
+	spi0_miso_default: spi0_miso_default {
+		pinmux = <21 DIO21_SPI0_MISO>;
+		bias-disable;
+		input-enable;
+	};
+
+	spi0_cs_default: spi0_cs_default {
+		pinmux = <11 DIO11_SPI0_CSN>;
+		bias-disable;
+	};
+
+	/* LGPT1 - PWM */
+	pwm5_default: lgpt1_chan2_default {
+		pinmux = <21 DIO21_T1_C2N>;
+		bias-disable;
+	};
+
+	/* LGPT2 - PWM */
+	pwm6_default: lgpt2_chan0_default {
+		pinmux = <8 DIO8_T2_C0N>;
+		bias-disable;
+	};
+
+	/* I2C0 */
+	i2c0_scl_default: i2c0_scl_default {
+		pinmux = <24 DIO24_I2C0_SCL>;
+		bias-pull-up;
+		drive-open-drain;
+		input-enable;
+	};
+
+	i2c0_sda_default: i2c0_sda_default {
+		pinmux = <8 DIO8_I2C0_SDA>;
+		bias-pull-up;
+		drive-open-drain;
+		input-enable;
+	};
+};
